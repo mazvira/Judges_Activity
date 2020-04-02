@@ -1,8 +1,11 @@
 const express = require('express');
 const session = require('express-session');
+var cors = require('cors');
 
 const app = express(),
     port = process.env.PORT || 8080;
+
+app.use(cors());
 
 app.use(session({
     key: 'user_sid',
