@@ -17,9 +17,19 @@ app.use(session({
     }
 }));
 
-app.route("/data")
+app.route("/data-activity")
     .get((req, res) => {
-        res.sendFile(__dirname + '/stat.csv');
+        res.sendFile(__dirname + '/stat_with_score');
+    });
+
+app.route("/data-month")
+    .get((req, res) => {
+        res.sendFile(__dirname + '/stat_by_month');
+    });
+
+app.route("/data-status")
+    .get((req, res) => {
+        res.sendFile(__dirname + '/judjes.csv');
     });
 
 
